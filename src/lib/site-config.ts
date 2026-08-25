@@ -1,3 +1,5 @@
+import { getImageUrl } from "./images";
+
 export const siteConfig = {
   name: "Shree Mahadev Travels Ujjain",
   shortName: "Shree Mahadev Travels",
@@ -18,8 +20,8 @@ export const siteConfig = {
     full: "97 Vrindavanpura, Mahaveer Marg, Ujjain, Dist. Ujjain, Madhya Pradesh",
   },
   social: {
-    instagram: "#",
-    facebook: "#",
+    instagram: "https://instagram.com",
+    facebook: "https://facebook.com",
   },
   googleMapsQuery: "Shree+Mahadev+Travels+Ujjain",
 } as const;
@@ -43,7 +45,7 @@ export const fleet: Vehicle[] = [
     seats: 4,
     bags: 2,
     ac: true,
-    image: "/images/fleet/swift-dzire.png",
+    image: getImageUrl("/images/fleet/swift-dzire.png"),
     highlight: "Best for small families",
   },
   {
@@ -53,7 +55,7 @@ export const fleet: Vehicle[] = [
     seats: 6,
     bags: 3,
     ac: true,
-    image: "/images/fleet/ertiga.png",
+    image: getImageUrl("/images/fleet/ertiga.png"),
     highlight: "Most popular for group travel",
   },
   {
@@ -63,7 +65,7 @@ export const fleet: Vehicle[] = [
     seats: 7,
     bags: 4,
     ac: true,
-    image: "/images/fleet/innova-crysta.png",
+    image: getImageUrl("/images/fleet/innova-crysta.png"),
     highlight: "Premium comfort for long trips",
   },
 ];
@@ -83,7 +85,7 @@ export const destinations: Destination[] = [
     nameHindi: "उज्जैन दर्शन",
     description:
       "Mahakaleshwar Jyotirlinga, Ram Ghat, Kal Bhairav and other sacred temples on the banks of the Shipra.",
-    image: "/images/destinations/ujjain.png",
+    image: getImageUrl("/images/destinations/ujjain.png"),
   },
   {
     slug: "omkareshwar",
@@ -91,7 +93,7 @@ export const destinations: Destination[] = [
     nameHindi: "ओंकारेश्वर",
     description:
       "One of the twelve Jyotirlingas, set on an island in the Narmada river surrounded by ghats and temples.",
-    image: "/images/destinations/omkareshwar.png",
+    image: getImageUrl("/images/destinations/omkareshwar.png"),
   },
   {
     slug: "maheshwar",
@@ -99,7 +101,7 @@ export const destinations: Destination[] = [
     nameHindi: "महेश्वर",
     description:
       "Ahilya Fort, Narmada Ghats and the historic weaving town on the banks of the holy Narmada river.",
-    image: "/images/destinations/maheshwar.png",
+    image: getImageUrl("/images/destinations/maheshwar.png"),
   },
   {
     slug: "mandu",
@@ -107,7 +109,7 @@ export const destinations: Destination[] = [
     nameHindi: "मांडू",
     description:
       "Jahaz Mahal, Roopmati Pavilion and centuries-old Afghan-style monuments atop the Malwa plateau.",
-    image: "/images/destinations/mandu.png",
+    image: getImageUrl("/images/destinations/mandu.png"),
   },
   {
     slug: "baglamukhi-nalkheda",
@@ -115,7 +117,7 @@ export const destinations: Destination[] = [
     nameHindi: "बगलामुखी नलखेड़ा",
     description:
       "Renowned Maa Baglamukhi Shakti Peeth temple at Nalkheda, on the banks of the Lakhundar river.",
-    image: "/images/destinations/baglamukhi.png",
+    image: getImageUrl("/images/destinations/baglamukhi.png"),
   },
   {
     slug: "kubereshwar-mahadev-sehore",
@@ -123,7 +125,7 @@ export const destinations: Destination[] = [
     nameHindi: "कुबेरेश्वर महादेव सीहोर",
     description:
       "Famous Shiva temple in Sehore, known for the annual Rudraksha Mahotsav and large devotee gatherings.",
-    image: "/images/destinations/kubereshwar.png",
+    image: getImageUrl("/images/destinations/kubereshwar.png"),
   },
   {
     slug: "indore-sightseeing",
@@ -131,7 +133,7 @@ export const destinations: Destination[] = [
     nameHindi: "इंदौर साईट सीन",
     description:
       "Rajwada Palace, Lal Bagh Palace, Sarafa Bazaar and the vibrant heart of Madhya Pradesh's largest city.",
-    image: "/images/destinations/indore.png",
+    image: getImageUrl("/images/destinations/indore.png"),
   },
 ];
 

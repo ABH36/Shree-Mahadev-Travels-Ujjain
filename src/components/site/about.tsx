@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
+import { getImageUrl } from "@/lib/images";
 
 export function About() {
   return (
@@ -21,7 +22,7 @@ export function About() {
             <div className="absolute h-56 w-56 rounded-full bg-primary/25 sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[420px] lg:w-[420px] blur-xs" />
             <div className="relative aspect-2172/724 w-full max-w-2xl lg:max-w-3xl transition-transform duration-300 hover:scale-105">
               <Image
-                src="/images/hero/about.png"
+                src={getImageUrl("/images/hero/about.png")}
                 alt="Shree Mahadev Travels Ujjain fleet — Swift Dzire, Ertiga and Innova Crysta"
                 fill
                 sizes="(max-width: 1024px) 100vw, 800px"

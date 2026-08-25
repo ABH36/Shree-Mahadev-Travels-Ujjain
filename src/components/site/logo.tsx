@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/lib/site-config";
+import { getImageUrl } from "@/lib/images";
 
 const sizes = {
   default: "h-16 w-17.5 md:h-19 md:w-21",
@@ -27,7 +29,7 @@ export function Logo({
         )}
       >
         <Image
-          src="/images/logo-mark.png"
+          src={getImageUrl("/images/logo-mark.png")}
           alt="Shree Mahadev Travels Ujjain"
           fill
           sizes="120px"
