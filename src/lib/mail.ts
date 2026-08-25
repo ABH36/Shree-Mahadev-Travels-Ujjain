@@ -28,10 +28,10 @@ export async function sendEnquiryEmail(data: EnquiryInput) {
   const digitsOnly = data.phone.replace(/\D/g, "");
   const formattedPhone = digitsOnly.length === 10 ? `91${digitsOnly}` : digitsOnly;
   const whatsappMsg = encodeURIComponent(
-    `Namaste ${data.name}! Thank you for enquiring with Shree Mahadev Travels Ujjain regarding your trip from ${data.pickupLocation} to ${data.dropLocation} on ${data.travelDate}. We are happy to help you with the best rates.`
+    `Namaste ${data.name}! Thank you for your enquiry with Shree Mahadev Travels Ujjain for traveling from ${data.pickupLocation} to ${data.dropLocation} on ${data.travelDate}. We are happy to help you with your cab booking.`
   );
 
-  const subject = `🚖 NEW TAXI ENQUIRY: ${data.name} (${data.pickupLocation} ➔ ${data.dropLocation})`;
+  const subject = `🚨 NEW TAXI ENQUIRY: ${data.name} (${data.pickupLocation} ➔ ${data.dropLocation})`;
 
   const adminHtml = `
   <!DOCTYPE html>
@@ -42,58 +42,52 @@ export async function sendEnquiryEmail(data: EnquiryInput) {
     <title>New Booking Enquiry</title>
   </head>
   <body style="margin: 0; padding: 0; background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #0f172a; padding: 20px 10px;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #0f172a; padding: 25px 10px;">
       <tr>
         <td align="center">
-          <table width="100%" max-width="600" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #1e293b; border-radius: 16px; overflow: hidden; border: 1px solid #334155; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);">
+          <table width="100%" max-width="620" border="0" cellspacing="0" cellpadding="0" style="max-width: 620px; background-color: #1e293b; border-radius: 16px; overflow: hidden; border: 1px solid #334155; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
             
-            <!-- HEADER BANNER -->
+            <!-- TOP BRAND HEADER -->
             <tr>
-              <td style="background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); padding: 25px 30px; text-align: center;">
-                <h1 style="margin: 0; color: #0f172a; font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">
+              <td style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 25px 30px; text-align: center;">
+                <h1 style="margin: 0; color: #0f172a; font-size: 24px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">
                   Shree Mahadev Travels Ujjain
                 </h1>
-                <p style="margin: 5px 0 0 0; color: #1e293b; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">
-                  🚖 New Booking Enquiry Received
-                </p>
+                <div style="display: inline-block; margin-top: 8px; background-color: #0f172a; color: #fef08a; font-size: 12px; font-weight: 800; padding: 4px 14px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 1.5px;">
+                  🚨 NEW ENQUIRY RECEIVED
+                </div>
               </td>
             </tr>
 
-            <!-- CONTENT BODY -->
+            <!-- MAIN BODY -->
             <tr>
               <td style="padding: 30px 25px;">
                 
-                <!-- ROUTE CARD -->
-                <div style="background-color: #0f172a; border-radius: 12px; padding: 18px 20px; border: 1px solid #334155; margin-bottom: 25px;">
-                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                      <td style="color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding-bottom: 6px;">
-                        Trip Route
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="color: #f8fafc; font-size: 17px; font-weight: 800; line-height: 1.4;">
-                        📍 <span style="color: #eab308;">${data.pickupLocation}</span> 
-                        <span style="color: #64748b; margin: 0 8px;">➔</span> 
-                        🏁 <span style="color: #38bdf8;">${data.dropLocation}</span>
-                      </td>
-                    </tr>
-                  </table>
+                <!-- ROUTE HIGHLIGHT BOX -->
+                <div style="background-color: #0f172a; border-radius: 12px; padding: 20px; border: 1px solid #334155; margin-bottom: 25px;">
+                  <div style="color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">
+                    🚖 TRAVEL ROUTE DETAILS
+                  </div>
+                  <div style="color: #f8fafc; font-size: 18px; font-weight: 800; line-height: 1.4;">
+                    📍 <span style="color: #fac710;">${data.pickupLocation}</span>
+                    <span style="color: #64748b; margin: 0 10px;">➔</span>
+                    🏁 <span style="color: #38bdf8;">${data.dropLocation}</span>
+                  </div>
                 </div>
 
-                <!-- CUSTOMER INFO SECTION -->
-                <h3 style="margin: 0 0 12px 0; color: #eab308; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
-                  👤 Customer Contact Details
+                <!-- CUSTOMER INFORMATION TABLE -->
+                <h3 style="margin: 0 0 12px 0; color: #fac710; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                  👤 CUSTOMER INFORMATION
                 </h3>
-                <table width="100%" border="0" cellspacing="0" cellpadding="8" style="background-color: #334155; border-radius: 10px; margin-bottom: 25px; border-collapse: collapse; font-size: 14px; color: #f1f5f9;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: #0f172a; border-radius: 10px; margin-bottom: 25px; border: 1px solid #334155; font-size: 14px; color: #f1f5f9;">
                   <tr>
-                    <td width="35%" style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #475569;">Name</td>
-                    <td style="color: #ffffff; font-weight: 700; border-bottom: 1px solid #475569;">${data.name}</td>
+                    <td width="35%" style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #1e293b;">Customer Name</td>
+                    <td style="color: #ffffff; font-weight: 800; font-size: 15px; border-bottom: 1px solid #1e293b;">${data.name}</td>
                   </tr>
                   <tr>
-                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #475569;">Mobile Number</td>
-                    <td style="color: #ffffff; font-weight: 700; border-bottom: 1px solid #475569;">
-                      <a href="tel:${data.phone}" style="color: #38bdf8; text-decoration: none;">📞 ${data.phone}</a>
+                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #1e293b;">Mobile Number</td>
+                    <td style="color: #ffffff; font-weight: 800; border-bottom: 1px solid #1e293b;">
+                      <a href="tel:${data.phone}" style="color: #38bdf8; text-decoration: none; font-size: 16px;">📞 ${data.phone}</a>
                     </td>
                   </tr>
                   <tr>
@@ -104,63 +98,50 @@ export async function sendEnquiryEmail(data: EnquiryInput) {
                   </tr>
                 </table>
 
-                <!-- TRIP DETAILS TABLE -->
-                <h3 style="margin: 0 0 12px 0; color: #eab308; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
-                  📋 Travel Specifications
+                <!-- TRIP SPECIFICATIONS TABLE -->
+                <h3 style="margin: 0 0 12px 0; color: #fac710; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                  📋 TRIP SPECIFICATIONS
                 </h3>
-                <table width="100%" border="0" cellspacing="0" cellpadding="8" style="background-color: #334155; border-radius: 10px; margin-bottom: 25px; border-collapse: collapse; font-size: 14px; color: #f1f5f9;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: #0f172a; border-radius: 10px; margin-bottom: 25px; border: 1px solid #334155; font-size: 14px; color: #f1f5f9;">
                   <tr>
-                    <td width="35%" style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #475569;">Travel Date</td>
-                    <td style="color: #ffffff; font-weight: 700; border-bottom: 1px solid #475569;">📅 ${data.travelDate}</td>
+                    <td width="35%" style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #1e293b;">Travel Date</td>
+                    <td style="color: #ffffff; font-weight: 800; border-bottom: 1px solid #1e293b;">📅 ${data.travelDate}</td>
                   </tr>
                   <tr>
-                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #475569;">Travel Time</td>
-                    <td style="color: #ffffff; font-weight: 700; border-bottom: 1px solid #475569;">⏰ ${data.travelTime || 'Flexible / As per schedule'}</td>
+                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #1e293b;">Travel Time</td>
+                    <td style="color: #ffffff; font-weight: 800; border-bottom: 1px solid #1e293b;">⏰ ${data.travelTime || 'Flexible / As per schedule'}</td>
                   </tr>
                   <tr>
-                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #475569;">Trip Type</td>
-                    <td style="color: #ffffff; font-weight: 700; border-bottom: 1px solid #475569;">🚗 ${data.tripType}</td>
+                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #1e293b;">Trip Type</td>
+                    <td style="color: #ffffff; font-weight: 800; border-bottom: 1px solid #1e293b;">🚘 ${data.tripType}</td>
                   </tr>
                   <tr>
-                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #475569;">Vehicle Requested</td>
-                    <td style="color: #eab308; font-weight: 800; border-bottom: 1px solid #475569;">🚘 ${data.carType}</td>
+                    <td style="color: #94a3b8; font-weight: 600; border-bottom: 1px solid #1e293b;">Vehicle Preference</td>
+                    <td style="color: #fac710; font-weight: 900; font-size: 15px; border-bottom: 1px solid #1e293b;">🏎️ ${data.carType}</td>
                   </tr>
                   <tr>
-                    <td style="color: #94a3b8; font-weight: 600; vertical-align: top;">Additional Message</td>
-                    <td style="color: #cbd5e1; font-weight: 500; leading-height: 1.5;">${data.message || 'No additional notes'}</td>
+                    <td style="color: #94a3b8; font-weight: 600; vertical-align: top;">Customer Requirements</td>
+                    <td style="color: #cbd5e1; font-weight: 500; line-height: 1.5;">${data.message || 'No extra requirements specified.'}</td>
                   </tr>
                 </table>
 
-                <!-- ACTION BUTTONS FOR DRIVER / OWNER -->
-                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 25px;">
-                  <tr>
-                    <td align="center">
-                      <table border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                          <td style="border-radius: 8px; background-color: #22c55e; padding: 12px 20px; text-align: center; margin-right: 10px; display: inline-block;">
-                            <a href="tel:${data.phone}" target="_blank" style="color: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none; display: inline-block;">
-                              📞 Call Customer
-                            </a>
-                          </td>
-                          <td width="10"></td>
-                          <td style="border-radius: 8px; background-color: #25D366; padding: 12px 20px; text-align: center; display: inline-block;">
-                            <a href="https://wa.me/${formattedPhone}?text=${whatsappMsg}" target="_blank" style="color: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none; display: inline-block;">
-                              💬 WhatsApp Customer
-                            </a>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
+                <!-- ONE CLICK ACTION BUTTONS -->
+                <div style="text-align: center; margin-top: 30px;">
+                  <a href="tel:${data.phone}" target="_blank" style="display: inline-block; background-color: #22c55e; color: #ffffff; font-size: 15px; font-weight: 800; padding: 14px 24px; border-radius: 10px; text-decoration: none; margin-right: 8px; margin-bottom: 8px;">
+                    📞 CALL CUSTOMER NOW
+                  </a>
+                  <a href="https://wa.me/${formattedPhone}?text=${whatsappMsg}" target="_blank" style="display: inline-block; background-color: #25D366; color: #ffffff; font-size: 15px; font-weight: 800; padding: 14px 24px; border-radius: 10px; text-decoration: none; margin-bottom: 8px;">
+                    💬 WHATSAPP CUSTOMER NOW
+                  </a>
+                </div>
 
               </td>
             </tr>
 
             <!-- FOOTER -->
             <tr>
-              <td style="background-color: #0f172a; padding: 18px 25px; text-align: center; border-top: 1px solid #334155; color: #64748b; font-size: 12px;">
-                Sent automatically via <strong>${siteConfig.name}</strong> Website Enquiry Form.
+              <td style="background-color: #0f172a; padding: 16px 25px; text-align: center; border-top: 1px solid #334155; color: #64748b; font-size: 12px;">
+                Instant Notification sent from <strong>${siteConfig.name}</strong> Website.
               </td>
             </tr>
 
@@ -172,17 +153,17 @@ export async function sendEnquiryEmail(data: EnquiryInput) {
   </html>
   `;
 
-  // Send main notification email to travel operator
+  // Send primary notification email to travel agency client
   await transporter.sendMail({
-    from: `"${siteConfig.name} Enquiry" <${process.env.SMTP_USER}>`,
+    from: `"${siteConfig.name} Website" <${process.env.SMTP_USER}>`,
     to: toEmail,
     replyTo: data.email || undefined,
     subject,
     html: adminHtml,
   });
 
-  // Optional: Send auto-acknowledgement receipt email to customer if email address was provided
-  if (data.email) {
+  // Only send auto-acknowledgement email to customer if customer email is provided AND different from client email
+  if (data.email && data.email.trim().toLowerCase() !== toEmail.trim().toLowerCase()) {
     const customerHtml = `
     <!DOCTYPE html>
     <html>
