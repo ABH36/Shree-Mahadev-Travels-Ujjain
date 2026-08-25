@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Star } from "lucide-react";
 import { Logo } from "@/components/site/logo";
 import { siteConfig } from "@/lib/site-config";
+import { getImageUrl } from "@/lib/images";
 
 const pages = [
   { href: "#home", label: "Home" },
@@ -25,15 +26,15 @@ export function Footer() {
             <h3 className="font-heading mt-4 text-2xl font-bold sm:text-3xl">Visit or Call Us Anytime</h3>
             <ul className="mt-5 flex flex-col items-center sm:items-start gap-3.5 text-sm text-white/80 font-medium w-full">
               <li className="flex items-center justify-center sm:justify-start gap-3">
-                <Image src="/images/icons/icons8-call-100.png" alt="Phone" width={24} height={24} className="object-contain shrink-0 rounded-full overflow-hidden" />
+                <Image src={getImageUrl("/images/icons/icons8-call-100.png")} alt="Phone" width={24} height={24} className="object-contain shrink-0 rounded-full overflow-hidden" />
                 <span>{siteConfig.phonesDisplay[0]} / {siteConfig.phonesDisplay[1]}</span>
               </li>
               <li className="flex items-center justify-center sm:justify-start gap-3">
-                <Image src="/images/icons/icons8-gmail-100.png" alt="Gmail" width={24} height={24} className="object-contain shrink-0 rounded-full overflow-hidden" />
+                <Image src={getImageUrl("/images/icons/icons8-gmail-100.png")} alt="Gmail" width={24} height={24} className="object-contain shrink-0 rounded-full overflow-hidden" />
                 <span className="break-all">{siteConfig.email}</span>
               </li>
               <li className="flex items-start justify-center sm:justify-start gap-3 text-center sm:text-justify">
-                <Image src="/images/icons/icons8-google-maps-100.png" alt="Location" width={24} height={24} className="mt-0.5 object-contain shrink-0 rounded-full overflow-hidden" />
+                <Image src={getImageUrl("/images/icons/icons8-google-maps-100.png")} alt="Location" width={24} height={24} className="mt-0.5 object-contain shrink-0 rounded-full overflow-hidden" />
                 <span>{siteConfig.address.full}</span>
               </li>
             </ul>
@@ -44,7 +45,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs font-extrabold text-slate-950 transition-transform hover:scale-105"
               >
-                <Image src="/images/icons/icons8-google-maps-100.png" alt="Google Maps" width={20} height={20} className="object-contain rounded-full overflow-hidden" />
+                <Image src={getImageUrl("/images/icons/icons8-google-maps-100.png")} alt="Google Maps" width={20} height={20} className="object-contain rounded-full overflow-hidden" />
                 See Our Reviews on Google
               </a>
             </div>
@@ -78,7 +79,7 @@ export function Footer() {
                   className="flex items-center justify-center transition-transform hover:scale-110 rounded-full overflow-hidden"
                 >
                   <Image
-                    src="/images/icons/icons8-instagram-100.gif"
+                    src={getImageUrl("/images/icons/icons8-instagram-100.gif")}
                     alt="Instagram"
                     width={38}
                     height={38}
@@ -94,7 +95,7 @@ export function Footer() {
                   className="flex items-center justify-center transition-transform hover:scale-110 rounded-full overflow-hidden"
                 >
                   <Image
-                    src="/images/icons/icons8-facebook-circled-100.gif"
+                    src={getImageUrl("/images/icons/icons8-facebook-circled-100.gif")}
                     alt="Facebook"
                     width={38}
                     height={38}
@@ -119,7 +120,7 @@ export function Footer() {
                   className="flex items-center justify-center transition-transform hover:scale-110 rounded-full overflow-hidden"
                 >
                   <Image
-                    src="/images/icons/icons8-instagram-100.gif"
+                    src={getImageUrl("/images/icons/icons8-instagram-100.gif")}
                     alt="Instagram"
                     width={40}
                     height={40}
@@ -135,7 +136,7 @@ export function Footer() {
                   className="flex items-center justify-center transition-transform hover:scale-110 rounded-full overflow-hidden"
                 >
                   <Image
-                    src="/images/icons/icons8-facebook-circled-100.gif"
+                    src={getImageUrl("/images/icons/icons8-facebook-circled-100.gif")}
                     alt="Facebook"
                     width={40}
                     height={40}
@@ -188,7 +189,7 @@ export function Footer() {
                 className="flex items-center justify-center sm:justify-start gap-2 hover:text-primary transition-colors"
               >
                 <Image
-                  src="/images/icons/icons8-whatsapp-logo-100.gif"
+                  src={getImageUrl("/images/icons/icons8-whatsapp-logo-100.gif")}
                   alt="WhatsApp"
                   width={20}
                   height={20}
@@ -202,7 +203,7 @@ export function Footer() {
                 className="flex items-center justify-center sm:justify-start gap-2 hover:text-primary transition-colors"
               >
                 <Image
-                  src="/images/icons/icons8-call-100.png"
+                  src={getImageUrl("/images/icons/icons8-call-100.png")}
                   alt="Phone"
                   width={20}
                   height={20}
@@ -215,7 +216,7 @@ export function Footer() {
                 className="flex items-center justify-center sm:justify-start gap-2 hover:text-primary transition-colors"
               >
                 <Image
-                  src="/images/icons/icons8-gmail-100.png"
+                  src={getImageUrl("/images/icons/icons8-gmail-100.png")}
                   alt="Gmail"
                   width={20}
                   height={20}
@@ -245,7 +246,7 @@ export function Footer() {
               className="inline-flex items-center transition-transform hover:scale-105"
             >
               <Image
-                src="/images/bdmlogo.png"
+                src={getImageUrl("/images/bdmlogo.png")}
                 alt="BDM - Designed & Developed"
                 width={85}
                 height={26}

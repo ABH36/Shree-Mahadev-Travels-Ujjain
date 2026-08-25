@@ -1,32 +1,22 @@
 import Image from "next/image";
 import { BookingForm } from "@/components/site/booking-form";
 import { siteConfig } from "@/lib/site-config";
+import { getImageUrl } from "@/lib/images";
 
 export function Book() {
   return (
     <section id="book" className="scroll-mt-20 relative overflow-hidden bg-background py-16 md:py-24">
-      <div className="pointer-events-none absolute -left-16 top-10 h-40 w-40 rounded-full bg-primary/20 md:h-56 md:w-56" />
-
-      <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
-        <div className="text-center mb-10 md:mb-14 overflow-x-auto no-scrollbar">
-          <h3 className="font-heading text-xl min-[400px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight whitespace-nowrap inline-block">
-            <span className="text-slate-950 dark:text-slate-100">Get In </span>
-            <span className="text-primary">Touch</span>
-          </h3>
-        </div>
-
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-950 dark:text-slate-100">
-              Your Ride is Just a{" "}
-              <span className="relative inline-block">
-                Click Away
-                <svg
-                  className="absolute -bottom-1 left-0 w-full text-primary"
-                  viewBox="0 0 200 10"
-                  preserveAspectRatio="none"
-                  aria-hidden="true"
-                >
+            <span className="inline-block rounded-full bg-primary/15 px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-primary">
+              Instant Booking
+            </span>
+            <h2 className="font-heading mt-4 text-3xl font-extrabold text-slate-950 dark:text-slate-100 sm:text-4xl lg:text-5xl">
+              Get In Touch <br />
+              <span className="relative inline-block text-primary">
+                With Us
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
                   <path d="M0 6 Q 50 0 100 5 T 200 4" stroke="currentColor" strokeWidth="5" fill="none" />
                 </svg>
               </span>
@@ -45,7 +35,7 @@ export function Book() {
               >
                 <div className="relative h-7 w-7 sm:h-9 sm:w-9 shrink-0 overflow-hidden rounded-full flex items-center justify-center bg-slate-950/10">
                   <Image
-                    src="/images/icons/icons8-call-100.png"
+                    src={getImageUrl("/images/icons/icons8-call-100.png")}
                     alt="Call"
                     width={28}
                     height={28}
@@ -62,7 +52,7 @@ export function Book() {
               >
                 <div className="relative h-7 w-7 sm:h-9 sm:w-9 shrink-0 overflow-hidden rounded-full flex items-center justify-center bg-slate-950/10">
                   <Image
-                    src="/images/icons/icons8-whatsapp-logo-100.gif"
+                    src={getImageUrl("/images/icons/icons8-whatsapp-logo-100.gif")}
                     alt="WhatsApp"
                     width={28}
                     height={28}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { destinations } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+import { getImageUrl } from "@/lib/images";
 
 export function Destinations() {
   const [active, setActive] = useState(0);
@@ -136,7 +137,7 @@ export function Destinations() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 rounded-full border border-slate-600 bg-slate-800 px-4 py-2.5 text-xs sm:text-sm font-semibold whitespace-nowrap text-slate-100 transition-all hover:bg-slate-700 hover:border-slate-400 hover:text-white shadow-sm"
                 >
-                  <Image src="/images/icons/icons8-google-maps-100.png" alt="Map" width={20} height={20} className="object-contain" /> View on Map
+                  <Image src={getImageUrl("/images/icons/icons8-google-maps-100.png")} alt="Map" width={20} height={20} className="object-contain" /> View on Map
                 </a>
                 <a
                   href="#book"

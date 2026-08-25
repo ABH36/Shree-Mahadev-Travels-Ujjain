@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Clock, Home, Zap, Wallet, UserCheck, Car, type LucideIcon } from "lucide-react";
 import { benefits } from "@/lib/site-config";
+import { getImageUrl } from "@/lib/images";
 
 const icons: Record<string, LucideIcon> = {
   clock: Clock,
@@ -60,7 +61,7 @@ export function Benefits() {
             <div className="absolute inset-0 rounded-full bg-primary/10" />
             <div className="relative flex h-56 w-56 items-center justify-center overflow-hidden rounded-full bg-white/5 p-3 ring-4 ring-primary/30 xl:h-64 xl:w-64">
               <Image
-                src="/images/logo-mark.png"
+                src={getImageUrl("/images/logo-mark.png")}
                 alt="Shree Mahadev Travels Ujjain Logo"
                 fill
                 sizes="256px"
