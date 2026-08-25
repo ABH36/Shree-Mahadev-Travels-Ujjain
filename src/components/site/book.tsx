@@ -9,10 +9,10 @@ export function Book() {
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div>
-            <span className="inline-block rounded-full bg-primary/15 px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-primary">
+            <span className="inline-block rounded-full bg-primary/15 px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900">
               Instant Booking
             </span>
-            <h2 className="font-heading mt-4 text-3xl font-extrabold text-slate-950 dark:text-slate-100 sm:text-4xl lg:text-5xl">
+            <h2 className="font-heading mt-4 text-3xl font-extrabold text-slate-950 sm:text-4xl lg:text-5xl">
               Get In Touch <br />
               <span className="relative inline-block text-primary">
                 With Us
@@ -21,7 +21,7 @@ export function Book() {
                 </svg>
               </span>
             </h2>
-            <p className="mt-5 max-w-md text-slate-800 dark:text-slate-200 font-medium text-justify leading-relaxed text-base">
+            <p className="mt-5 max-w-md text-slate-800 font-medium text-justify leading-relaxed text-base">
               Book a safe, comfortable and affordable cab instantly. Whether you&apos;re
               travelling within the city, going outstation, or need an airport pickup — we&apos;ve
               got you covered. Choose your vehicle, enter your details and get ready to travel

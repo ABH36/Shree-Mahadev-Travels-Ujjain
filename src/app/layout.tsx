@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, destinations } from "@/lib/site-config";
 import "./globals.css";
+
+const ogImage = destinations[0].image;
 
 const inter = Inter({
   variable: "--font-inter",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/images/destinations/ujjain.png",
+        url: ogImage,
         width: 1820,
         height: 864,
         alt: siteConfig.name,
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Taxi & Cab Booking in Ujjain`,
     description: siteConfig.description,
-    images: ["/images/destinations/ujjain.png"],
+    images: [ogImage],
   },
   robots: {
     index: true,
@@ -79,7 +81,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     "@context": "https://schema.org",
     "@type": "TaxiService",
     name: siteConfig.name,
-    image: `${siteConfig.url}/images/destinations/ujjain.png`,
+    image: ogImage,
     "@id": siteConfig.url,
     url: siteConfig.url,
     telephone: siteConfig.phones[0],

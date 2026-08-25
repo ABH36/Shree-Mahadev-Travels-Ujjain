@@ -14,7 +14,7 @@ function getCloudinaryUrl(localPath: string): string {
     try {
       const mapping = JSON.parse(fs.readFileSync(MAPPING_FILE, "utf8"));
       return mapping[localPath] || localPath;
-    } catch (e) {
+    } catch {
       return localPath;
     }
   }
@@ -233,8 +233,8 @@ async function seed() {
     console.log("-> Collection 'benefits' (6 items) seeded successfully!");
 
     console.log("\n=== ALL MONGODB DATA SEEDED PERFECTLY ===");
-  } catch (err: any) {
-    console.error("Seeding failed:", err.message);
+  } catch (err) {
+    console.error("Seeding failed:", err instanceof Error ? err.message : err);
   } finally {
     await client.close();
   }

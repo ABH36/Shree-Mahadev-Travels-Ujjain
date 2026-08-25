@@ -49,10 +49,10 @@ export function Destinations() {
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
         <div className="text-center mb-10 md:mb-14 overflow-x-auto no-scrollbar">
           <h2 className="font-heading text-xl min-[400px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight whitespace-nowrap inline-block">
-            <span className="text-slate-950 dark:text-slate-100">TOURIST </span>
+            <span className="text-slate-950">TOURIST </span>
             <span className="text-primary">PLACES</span>
           </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-slate-800 dark:text-slate-200 font-medium text-base md:text-lg">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-800 font-medium text-base md:text-lg">
             From Jyotirlingas to Shakti Peeths and heritage towns — pick a destination to preview it, then book a taxi there.
           </p>
         </div>

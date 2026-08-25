@@ -46,7 +46,7 @@ async function uploadImages() {
   if (fs.existsSync(MAPPING_FILE)) {
     try {
       mapping = JSON.parse(fs.readFileSync(MAPPING_FILE, "utf8"));
-    } catch (e) {
+    } catch {
       mapping = {};
     }
   }
@@ -69,8 +69,8 @@ async function uploadImages() {
 
       console.log(`-> SUCCESS: ${res.secure_url}`);
       mapping[relativePath] = res.secure_url;
-    } catch (err: any) {
-      console.error(`-> FAILED for ${relativePath}:`, err.message);
+    } catch (err) {
+      console.error(`-> FAILED for ${relativePath}:`, err instanceof Error ? err.message : err);
     }
   }
 

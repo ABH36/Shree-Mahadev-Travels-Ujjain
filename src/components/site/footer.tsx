@@ -254,9 +254,6 @@ export function Footer() {
               />
             </a>
           </div>
-          <p className="text-white/50 text-center lg:text-right">
-            Destination &amp; vehicle photos: Wikimedia Commons, used for reference.
-          </p>
         </div>
       </div>
     </footer>

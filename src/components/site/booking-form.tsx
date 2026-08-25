@@ -167,7 +167,7 @@ export function BookingForm() {
         {...register("message")}
       />
 
-      <Button type="submit" size="lg" disabled={submitting} className="w-full font-bold text-base" aria-label="Submit Booking Form">
+      <Button type="submit" size="lg" disabled={submitting} className="w-full font-bold text-base">
         {submitting ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" /> Booking...

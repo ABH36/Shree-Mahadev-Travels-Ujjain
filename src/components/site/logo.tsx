@@ -20,7 +20,7 @@ export function Logo({
     <Link
       href="/"
       className={cn("flex shrink-0 items-center group", className)}
-      aria-label="Shree Mahadev Travels Ujjain - Home"
+      aria-label={`${siteConfig.name} - Home`}
     >
       <span
         className={cn(
@@ -30,7 +30,7 @@ export function Logo({
       >
         <Image
           src={getImageUrl("/images/logo-mark.png")}
-          alt="Shree Mahadev Travels Ujjain"
+          alt={siteConfig.name}
           fill
           sizes="120px"
           className="object-contain"

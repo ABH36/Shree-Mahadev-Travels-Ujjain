@@ -33,47 +33,44 @@ export function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative aspect-2/1 w-full">
-        {slides.map((slide, i) => (
-          <div
-            key={slide.id}
-            className={cn(
-              "absolute inset-0 transition-opacity duration-700 ease-in-out",
-              i === index ? "opacity-100" : "opacity-0 pointer-events-none"
-            )}
-          >
-            {slide.contain ? (
-              <>
-                <Image
-                  src={slide.image}
-                  alt=""
-                  aria-hidden="true"
-                  fill
-                  sizes="100vw"
-                  className="object-cover scale-150 blur-[80px] brightness-[0.35] saturate-50"
-                />
-                <div className="absolute inset-0 bg-black/25" />
+      <div className="relative aspect-2/1 w-full overflow-hidden">
+        {slides.map((slide, i) => {
+          if (i !== index) return null;
+          return (
+            <div key={slide.id} className="absolute inset-0 animate-in fade-in duration-700 ease-in-out">
+              {slide.contain ? (
+                <>
+                  <Image
+                    src={slide.image}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    sizes="100vw"
+                    className="object-cover scale-150 blur-[80px] brightness-[0.35] saturate-50"
+                  />
+                  <div className="absolute inset-0 bg-black/25" />
+                  <Image
+                    src={slide.image}
+                    alt={slide.alt}
+                    fill
+                    priority={i === 0}
+                    sizes="100vw"
+                    className="relative object-contain"
+                  />
+                </>
+              ) : (
                 <Image
                   src={slide.image}
                   alt={slide.alt}
                   fill
                   priority={i === 0}
                   sizes="100vw"
-                  className="relative object-contain"
+                  className="object-cover"
                 />
-              </>
-            ) : (
-              <Image
-                src={slide.image}
-                alt={slide.alt}
-                fill
-                priority={i === 0}
-                sizes="100vw"
-                className="object-cover"
-              />
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          );
+        })}
 
         <button
           onClick={prev}
@@ -96,11 +93,15 @@ export function Hero() {
               key={slide.id}
               onClick={() => setIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={cn(
-                "h-1.5 rounded-full transition-all",
-                i === index ? "w-6 bg-primary" : "w-1.5 bg-white/50 hover:bg-white/75"
-              )}
-            />
+              className="flex h-6 w-6 items-center justify-center"
+            >
+              <span
+                className={cn(
+                  "h-1.5 rounded-full transition-all",
+                  i === index ? "w-6 bg-primary" : "w-1.5 bg-white/50 hover:bg-white/75"
+                )}
+              />
+            </button>
           ))}
         </div>
       </div>

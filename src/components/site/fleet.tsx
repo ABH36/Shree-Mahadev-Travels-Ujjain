@@ -5,14 +5,14 @@ import { Button } from "@/components/ui/button";
 
 export function Fleet() {
   return (
-    <section id="fleet" className="scroll-mt-20 bg-slate-100/90 dark:bg-slate-900/90 py-16 md:py-24 border-y border-slate-200/80 dark:border-slate-800">
+    <section id="fleet" className="scroll-mt-20 bg-slate-100/90 py-16 md:py-24 border-y border-slate-200/80">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
         <div className="text-center mb-10 md:mb-16 overflow-x-auto no-scrollbar">
           <h2 className="font-heading text-xl min-[400px]:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight whitespace-nowrap inline-block">
-            <span className="text-slate-950 dark:text-slate-100">FIND YOUR </span>
+            <span className="text-slate-950">FIND YOUR </span>
             <span className="text-primary">PERFECT RIDE</span>
           </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-slate-800 dark:text-slate-200 font-medium text-base md:text-lg">
+          <p className="mt-3 max-w-2xl mx-auto text-slate-800 font-medium text-base md:text-lg">
             Well-maintained, comfortable vehicles for every group size — from solo darshan trips to full family yatras.
           </p>
         </div>
@@ -32,7 +32,7 @@ export function Fleet() {
             </div>
           </div>
 
-          <div className="flex flex-col divide-y divide-slate-200/80 dark:divide-slate-700/60 bg-white/80 dark:bg-slate-800/80 p-5.5 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-700/80 shadow-xl shadow-black/5">
+          <div className="flex flex-col divide-y divide-slate-200/80 bg-white/80 p-5.5 sm:p-7 rounded-3xl border border-slate-200/90 shadow-xl shadow-black/5">
             {fleet.map((car) => (
               <div key={car.slug} className="flex items-center gap-5 py-4.5 first:pt-0 last:pb-0 sm:gap-6 sm:py-5">
                 <div className="relative h-18 w-28 shrink-0 sm:h-20 sm:w-32 flex items-center justify-center">
@@ -46,8 +46,8 @@ export function Fleet() {
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-lg font-extrabold text-slate-950 dark:text-slate-100 sm:text-xl">{car.name}</h3>
-                  <div className="mt-1 flex flex-wrap items-center gap-x-3.5 gap-y-1 text-xs text-slate-700 dark:text-slate-300 font-semibold sm:text-sm">
+                  <h3 className="font-heading text-lg font-extrabold text-slate-950 sm:text-xl">{car.name}</h3>
+                  <div className="mt-1 flex flex-wrap items-center gap-x-3.5 gap-y-1 text-xs text-slate-700 font-semibold sm:text-sm">
                     <span className="flex items-center gap-1">
                       <Users className="h-3.5 w-3.5 text-primary" /> {car.seats} Seats
                     </span>

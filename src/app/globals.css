@@ -39,9 +39,6 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --color-dark-section: var(--dark-section);
-  --color-dark-section-foreground: var(--dark-section-foreground);
-  --color-dark-card: var(--dark-card);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -76,9 +73,6 @@
   --chart-4: oklch(0.4 0.09 80);
   --chart-5: oklch(0.25 0.06 75);
   --radius: 0.75rem;
-  --dark-section: oklch(0.1 0.008 60);
-  --dark-section-foreground: oklch(0.98 0.01 92);
-  --dark-card: oklch(0.16 0.01 60);
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.17 0.012 60);
   --sidebar-primary: oklch(0.84 0.17 96);

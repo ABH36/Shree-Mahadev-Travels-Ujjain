@@ -137,48 +137,6 @@ export const destinations: Destination[] = [
   },
 ];
 
-export const whyChooseUs = [
-  {
-    title: "24/7 Availability",
-    description: "Book a cab any time of day or night for pickups, drops and darshan yatras.",
-  },
-  {
-    title: "Wide Range of Vehicles",
-    description: "From compact sedans to spacious MUVs, choose the car that fits your group.",
-  },
-  {
-    title: "Affordable, Transparent Rates",
-    description: "Clear pricing with no hidden charges, decided upfront before your trip.",
-  },
-  {
-    title: "Experienced Local Drivers",
-    description: "Drivers who know the pilgrim routes and highways around Ujjain well.",
-  },
-  {
-    title: "Direct Booking, No Middlemen",
-    description: "Talk directly to us on call or WhatsApp and confirm your booking instantly.",
-  },
-];
-
-export const services = [
-  {
-    title: "Outstation Taxi",
-    description: "One-way and round-trip taxi service to Omkareshwar, Indore, Maheshwar, Mandu and beyond.",
-  },
-  {
-    title: "Darshan & Yatra Packages",
-    description: "Custom pilgrim tour packages covering Ujjain and nearby Jyotirlinga and Shakti Peeth temples.",
-  },
-  {
-    title: "Local Sightseeing",
-    description: "Full-day and half-day local cab service for sightseeing within Ujjain and Indore.",
-  },
-  {
-    title: "24/7 Car Rental Support",
-    description: "Round-the-clock booking assistance over call and WhatsApp for last-minute travel needs.",
-  },
-];
-
 export const benefits = [
   {
     icon: "clock",

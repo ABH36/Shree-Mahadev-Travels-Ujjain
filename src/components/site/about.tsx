@@ -12,7 +12,7 @@ export function About() {
       <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-10">
         <div className="text-center mb-10 md:mb-16 overflow-x-auto no-scrollbar">
           <h2 className="font-heading text-lg min-[400px]:text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight whitespace-nowrap inline-block">
-            <span className="text-slate-950 dark:text-slate-100">Welcome To </span>
+            <span className="text-slate-950">Welcome To </span>
             <span className="text-primary">{siteConfig.name}</span>
           </h2>
         </div>
@@ -33,12 +33,12 @@ export function About() {
           </div>
 
           <div>
-            <p className="text-slate-800 dark:text-slate-200 font-medium text-justify leading-relaxed text-base sm:text-lg">
+            <p className="text-slate-800 font-medium text-justify leading-relaxed text-base sm:text-lg">
               {siteConfig.name} has been serving pilgrims and travellers with dependable,
               comfortable taxis for Ujjain, Omkareshwar, Indore, Maheshwar and Mandu routes —
               available round the clock with experienced local drivers.
             </p>
-            <p className="mt-5 text-slate-800 dark:text-slate-200 font-medium text-justify leading-relaxed text-base sm:text-lg">
+            <p className="mt-5 text-slate-800 font-medium text-justify leading-relaxed text-base sm:text-lg">
               From a quick darshan trip to a full family yatra, our fleet ranges from compact
               sedans to spacious MUVs — all bookable directly on call or WhatsApp, with honest,
               upfront pricing and no hidden charges.
