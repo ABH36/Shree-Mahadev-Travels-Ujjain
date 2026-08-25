@@ -66,7 +66,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "https://res.cloudinary.com/zxmmvaju/image/upload/v1787644226/shree-mahadev-travels/images/logo-mark.png", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
   },
 };
 
