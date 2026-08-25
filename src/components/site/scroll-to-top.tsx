@@ -40,7 +40,7 @@ export function ScrollToTop() {
           : "opacity-0 translate-y-4 pointer-events-none"
       )}
     >
-      <ChevronUp className="h-7 w-7 stroke-[3]" />
+      <ChevronUp className="h-7 w-7 stroke-3" />
     </button>
   );
 }

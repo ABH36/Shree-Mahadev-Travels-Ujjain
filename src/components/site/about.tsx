@@ -19,7 +19,7 @@ export function About() {
 
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="relative flex items-center justify-center py-6 sm:py-10">
-            <div className="absolute h-56 w-56 rounded-full bg-primary/25 sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[420px] lg:w-[420px] blur-xs" />
+            <div className="absolute h-56 w-56 rounded-full bg-primary/25 sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-105 lg:w-105 blur-xs" />
             <div className="relative aspect-2172/724 w-full max-w-2xl lg:max-w-3xl transition-transform duration-300 hover:scale-105">
               <Image
                 src={getImageUrl("/images/hero/about.png")}
