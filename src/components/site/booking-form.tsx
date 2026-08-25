@@ -26,11 +26,12 @@ function ToggleGroup({
   onChange: (v: string) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2" role="group">
       {options.map((opt) => (
         <button
           key={opt}
           type="button"
+          aria-label={`Select ${opt}`}
           onClick={() => onChange(opt)}
           className={cn(
             "rounded-full border px-4 py-2 text-xs font-bold transition-all sm:text-sm",
@@ -93,17 +94,17 @@ export function BookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6" aria-label="Cab Booking Form">
       <div>
         <p className="mb-3 text-xs sm:text-sm font-extrabold uppercase tracking-widest text-primary">Passenger Details</p>
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="relative flex items-center">
             <User className={iconClass} />
-            <Input placeholder="Name" className={fieldClass} {...register("name")} />
+            <Input placeholder="Name" aria-label="Full Name" className={fieldClass} {...register("name")} />
           </div>
           <div className="relative flex items-center">
             <PhoneIcon className={iconClass} />
-            <Input placeholder="Mobile Number" type="tel" className={fieldClass} {...register("phone")} />
+            <Input placeholder="Mobile Number" aria-label="Mobile Number" type="tel" className={fieldClass} {...register("phone")} />
           </div>
         </div>
         {(errors.name || errors.phone) && (
@@ -116,19 +117,19 @@ export function BookingForm() {
         <div className="grid gap-3 sm:grid-cols-2">
           <div className="relative flex items-center">
             <MapPin className={iconClass} />
-            <Input placeholder="Pickup Location" className={fieldClass} {...register("pickupLocation")} />
+            <Input placeholder="Pickup Location" aria-label="Pickup Location" className={fieldClass} {...register("pickupLocation")} />
           </div>
           <div className="relative flex items-center">
             <MapPin className={iconClass} />
-            <Input placeholder="Drop Location" className={fieldClass} {...register("dropLocation")} />
+            <Input placeholder="Drop Location" aria-label="Drop Location" className={fieldClass} {...register("dropLocation")} />
           </div>
           <div className="relative flex items-center">
             <Calendar className={iconClass} />
-            <Input type="date" className={cn(fieldClass, "text-neutral-950 font-bold placeholder:text-neutral-700")} {...register("travelDate")} />
+            <Input type="date" aria-label="Travel Date" className={cn(fieldClass, "text-neutral-950 font-bold placeholder:text-neutral-700")} {...register("travelDate")} />
           </div>
           <div className="relative flex items-center">
             <Clock className={iconClass} />
-            <Input type="time" className={cn(fieldClass, "text-neutral-950 font-bold placeholder:text-neutral-700")} {...register("travelTime")} />
+            <Input type="time" aria-label="Travel Time" className={cn(fieldClass, "text-neutral-950 font-bold placeholder:text-neutral-700")} {...register("travelTime")} />
           </div>
         </div>
         {(errors.pickupLocation || errors.dropLocation || errors.travelDate) && (
@@ -160,12 +161,13 @@ export function BookingForm() {
 
       <Textarea
         placeholder="Anything else we should know? (optional)"
+        aria-label="Additional Requirements or Notes"
         rows={2}
         className="resize-none rounded-xl border-0 bg-white px-4 py-3.5 text-sm font-bold text-neutral-950 placeholder:text-neutral-700 placeholder:font-semibold shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
         {...register("message")}
       />
 
-      <Button type="submit" size="lg" disabled={submitting} className="w-full font-bold text-base">
+      <Button type="submit" size="lg" disabled={submitting} className="w-full font-bold text-base" aria-label="Submit Booking Form">
         {submitting ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" /> Booking...
