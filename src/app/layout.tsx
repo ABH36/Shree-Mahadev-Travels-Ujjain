@@ -67,13 +67,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: [
-      { url: "/icon.png", type: "image/png" },
-      { url: "https://res.cloudinary.com/zxmmvaju/image/upload/v1787644226/shree-mahadev-travels/images/logo-mark.png", type: "image/png" },
-    ],
-    apple: "/apple-icon.png",
-  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
