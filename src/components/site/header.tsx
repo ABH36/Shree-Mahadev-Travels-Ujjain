@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/site/logo";
+import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -75,6 +76,14 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <Button
+            render={<a href={`tel:${siteConfig.phones[0]}`} />}
+            nativeButton={false}
+            className="font-bold border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+          >
+            <Phone className="h-3.5 w-3.5 text-primary" />
+            <span>Call Now</span>
+          </Button>
+          <Button
             render={<a href="#book" />}
             nativeButton={false}
             className="hidden sm:inline-flex font-bold"
@@ -111,13 +120,23 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="#book"
-            onClick={() => setOpen(false)}
-            className="mt-2 rounded-md bg-primary px-3 py-2.5 text-center text-sm font-bold text-primary-foreground"
-          >
-            Book Now
-          </Link>
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            <a
+              href={`tel:${siteConfig.phones[0]}`}
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-center gap-1.5 rounded-md border border-white/20 bg-white/10 px-3 py-2.5 text-center text-sm font-bold text-white hover:bg-white/20"
+            >
+              <Phone className="h-4 w-4 text-primary" />
+              Call Now
+            </a>
+            <Link
+              href="#book"
+              onClick={() => setOpen(false)}
+              className="rounded-md bg-primary px-3 py-2.5 text-center text-sm font-bold text-primary-foreground"
+            >
+              Book Now
+            </Link>
+          </div>
         </nav>
       ) : null}
     </header>

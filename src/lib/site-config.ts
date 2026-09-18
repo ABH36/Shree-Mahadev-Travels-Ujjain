@@ -7,10 +7,10 @@ export const siteConfig = {
   description:
     "Shree Mahadev Travels Ujjain offers reliable and affordable taxi and cab booking services in Ujjain, Omkareshwar, Indore, Maheshwar, Mandu and nearby pilgrim destinations. Book Swift Dzire, Ertiga or Innova Crysta for outstation trips, darshan yatra and local sightseeing.",
   url: "https://shreemahadevtravelsujjain.com",
-  phones: ["+918815192528", "+919713629770"],
-  phonesDisplay: ["8815192528", "9713629770"],
-  whatsapp: "918815192528",
-  whatsappDisplay: "8815192528",
+  phones: ["+919406675770", "+919713629770"],
+  phonesDisplay: ["94066 75770", "9713629770"],
+  whatsapp: "919406675770",
+  whatsappDisplay: "94066 75770",
   email: "shreemahadevtravelsujjain@gmail.com",
   address: {
     line1: "97, Vrindavanpura, Mahaveer Marg",
