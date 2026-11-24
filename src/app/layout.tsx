@@ -172,6 +172,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en-IN"
       className={`${inter.variable} ${poppins.variable} ${geistMono.variable} h-full antialiased`}
     >
+      {/* Google Tag Manager */}
+      <Script
+        id="google-tag-manager"
+        src="https://www.googletagmanager.com/gtm.js?id=GTM-KG693NRF"
+        strategy="afterInteractive"
+      />
       {/* Google tag (gtag.js) */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-18418319567"
@@ -186,6 +192,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         `}
       </Script>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KG693NRF"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
